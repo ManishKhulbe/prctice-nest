@@ -23,7 +23,8 @@ export class MessagesController {
 
   @Get('/:id')
   async getMessage(@Param('id') id: string) {
-    const message = await  this.MessagesService.findOne(id)
+    const message =  await  this.MessagesService.findOne(id)
+
     if(!message){
         throw new NotFoundException('message not found')
     }
